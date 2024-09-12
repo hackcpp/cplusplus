@@ -45,5 +45,4 @@ int main() {
     fruitPriceCa.SetStrategy(straegy);
     std::cout << fruitPriceCa.Sumprice(ctx);
     delete straegy;
-
 }
