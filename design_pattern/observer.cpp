@@ -6,34 +6,32 @@
 #include <iostream>
 
 class IProgress {
-    public:
-    virtual void DoProgress(float value) = 0;
+ public:
+  virtual void DoProgress(float value) = 0;
 };
 
 class FileSpliter {
-public:
-    void splitFile() {
-        for (int i = 0; i < 100; i++) {
-            //....
-            if (mIProgress) mIProgress->DoProgress((i+1)*100/100);
-        }
+ public:
+  void splitFile() {
+    for (int i = 0; i < 100; i++) {
+      //....
+      if (mIProgress) mIProgress->DoProgress((i + 1) * 100 / 100);
     }
-    void setProgress(IProgress* progress) {mIProgress = progress;}
-private:
-    IProgress* mIProgress = nullptr;
+  }
+  void setProgress(IProgress* progress) { mIProgress = progress; }
+
+ private:
+  IProgress* mIProgress = nullptr;
 };
 
-class MainForm: public IProgress{
-    public:
-    void DoProgress(float value) override {
-        std::cout << value << std::endl;
-    }
+class MainForm : public IProgress {
+ public:
+  void DoProgress(float value) override { std::cout << value << std::endl; }
 };
 
 int main() {
-    FileSpliter spliter;
-    MainForm form;
-    spliter.setProgress(&form);
-    spliter.splitFile();
+  FileSpliter spliter;
+  MainForm form;
+  spliter.setProgress(&form);
+  spliter.splitFile();
 }
-
