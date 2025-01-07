@@ -7,3 +7,4 @@ include(CMake/common.cmake)
 
 add_subdirectory(thread)
 add_subdirectory(design_pattern)
+add_subdirectory(tests)
