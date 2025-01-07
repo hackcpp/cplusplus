@@ -3,5 +3,7 @@ project(LearnCpp)
 
 set(CMAKE_CXX_STANDARD 17)
 
+include(CMake/common.cmake)
+
 add_subdirectory(thread)
 add_subdirectory(design_pattern)

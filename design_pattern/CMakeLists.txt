@@ -1,1 +1,2 @@
-add_executable(strategy strategy.cpp)
+set(bins strategy observer creational_patterns decorator)
+addBins(${bins})
