@@ -5,7 +5,6 @@
 #include<condition_variable>
 
 
-
 std::queue<std::string> g_data;
 std::mutex mut;
 std::condition_variable cv;
